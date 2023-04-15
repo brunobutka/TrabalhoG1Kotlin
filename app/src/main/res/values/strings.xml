@@ -4,4 +4,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="members">Alunos</string>
     <string name="names">Angelo Antonio Bezutti\nBruno Butka\nLetícia Priotto\nMatheus Stefanello</string>
+    <string name="initial_observation">Observação: gire a tela para ver os nomes dos integrantes do grupo</string>
 </resources>
