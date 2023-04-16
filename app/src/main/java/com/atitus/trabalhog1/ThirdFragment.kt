@@ -41,7 +41,7 @@ class ThirdFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_third, container, false)
 
         val txtValorDistancia: TextView = view.findViewById(R.id.txtValorDistancia)
-        txtValorDistancia.text = "Distância: ${(((param1 ?: 1).toDouble() * (param2 ?: 1).toDouble()) / (param3 ?: 1).toDouble())
+        txtValorDistancia.text = "Resultado: ${(((param1 ?: 1).toDouble() * (param2 ?: 1).toDouble()) / (param3 ?: 1).toDouble())
                                                 .toBigDecimal()
                                                 .setScale(2, RoundingMode.HALF_EVEN)}"
 
