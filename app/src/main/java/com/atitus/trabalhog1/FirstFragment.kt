@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -43,10 +44,24 @@ class FirstFragment : Fragment() {
         btnAvancarTelaInicial = view.findViewById(R.id.btnAvancarTelaInicial)
 
         btnAvancarTelaInicial.setOnClickListener {
-            val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment(txtNome.text.toString())
-            findNavController().navigate(action)
+            if(!txtNome.text.toString().isNullOrBlank()) {
+                val action =
+                    FirstFragmentDirections.actionFirstFragmentToSecondFragment(txtNome.text.toString())
+                findNavController().navigate(action)
+            } else {
+                val alertDialogBuilder = context?.let { context ->
+                    MaterialAlertDialogBuilder(
+                        context,
+                        com.google.android.material.R.style.ThemeOverlay_MaterialComponents_MaterialAlertDialog
+                    )
+                }
+                alertDialogBuilder?.setMessage("Por favor, insira um nome!")
+                    ?.setPositiveButton("OK") { _, _ ->
+                        // Respond to positive button press
+                    }
+                    ?.show()
+            }
         }
-
         // Inflate the layout for this fragment
         return view
     }
@@ -70,4 +85,5 @@ class FirstFragment : Fragment() {
                 }
             }
     }
+
 }
