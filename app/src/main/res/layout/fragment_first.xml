@@ -6,10 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".FirstFragment">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="16dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -20,21 +22,12 @@
             android:textColor="@color/black"
             android:text="Seja Bem-Vindo" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:layout_marginLeft="55dp"
-            android:textSize="15sp"
-            android:textColor="@color/black"
-            android:text="Informe seu nome:" />
-
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="5dp"
-            android:hint="Nome"
+            android:layout_marginTop="100dp"
+            android:hint="Informe seu nome"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtNome"
@@ -45,7 +38,7 @@
 
         <Button
             android:id="@+id/btnAvancarTelaInicial"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="40dp"
