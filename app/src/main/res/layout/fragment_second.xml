@@ -6,11 +6,109 @@
     tools:context=".SecondFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/txtUserName"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textSize="40sp"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/txtUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:text="Olá" />
+
+        <ScrollView
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:text="@string/how_it_works_1"/>
+        </ScrollView>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="100dp"
+            android:hint="Distância (KM)"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtDistancia"
+                android:inputType="numberDecimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:hint="Preço da Gasolina (R$)"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtPrecoGasolina"
+                android:inputType="numberDecimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:hint="Consumo do Carro (KM/L)"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtConsumoCarro"
+                android:inputType="numberDecimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="100dp">
+
+            <Button
+                android:id="@+id/btnVoltarParaInicio"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:textColor="@color/black"
+                android:text="Voltar"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_gravity="start"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/btnCalcular"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:textColor="@color/black"
+                android:text="Calcular"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_gravity="end"/>
+        </LinearLayout>
+
+    </LinearLayout>
 </FrameLayout>
