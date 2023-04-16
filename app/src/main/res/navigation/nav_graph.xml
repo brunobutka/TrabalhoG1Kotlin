@@ -21,5 +21,23 @@
         <argument
             android:name="ARG_PARAM1"
             app:argType="string" />
+        <action
+            android:id="@+id/action_secondFragment_to_thirdFragment"
+            app:destination="@id/thirdFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="com.atitus.trabalhog1.ThirdFragment"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_third" >
+        <argument
+            android:name="ARG_PARAM1"
+            app:argType="float" />
+        <argument
+            android:name="ARG_PARAM2"
+            app:argType="float" />
+        <argument
+            android:name="ARG_PARAM3"
+            app:argType="float" />
     </fragment>
 </navigation>
