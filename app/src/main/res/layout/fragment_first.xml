@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstFragment">
+    tools:context=".FirstFragment"
+    android:background="@drawable/bakground">
 
 
     <LinearLayout
@@ -20,7 +21,7 @@
             android:textAlignment="center"
             android:textSize="48sp"
             android:textColor="@color/black"
-            android:text="Seja Bem-Vindo" />
+            android:text="Bem-Vindo" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -41,10 +42,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="40dp"
-            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
             android:text="Avançar"
-            style="?attr/materialButtonOutlinedStyle"/>
+            style="?attr/materialButtonOutlinedStyle"
+            android:backgroundTint="@color/buttons"
+            android:padding="16dp"/>
 
         <TextView
             android:layout_width="350dp"

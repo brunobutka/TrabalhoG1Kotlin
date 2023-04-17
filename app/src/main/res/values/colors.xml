@@ -7,4 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="gradiStart">#a7a4a5</color>
+    <color name="gradiEnd">#e9e8e9</color>
+    <color name="buttons">#000000</color>
 </resources>
