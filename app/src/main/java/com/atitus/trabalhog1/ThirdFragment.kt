@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
+import androidx.navigation.fragment.findNavController
 import java.math.RoundingMode
 
 // TODO: Rename parameter arguments, choose names that match
@@ -24,6 +26,7 @@ class ThirdFragment : Fragment() {
     private var param1: Float? = null
     private var param2: Float? = null
     private var param3: Float? = null
+    private lateinit var btnVoltarParaSegundaTela: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,11 +43,16 @@ class ThirdFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_third, container, false)
 
-        val txtValorDistancia: TextView = view.findViewById(R.id.txtValorDistancia)
-        txtValorDistancia.text = "Resultado: ${(((param1 ?: 1).toDouble() * (param2 ?: 1).toDouble()) / (param3 ?: 1).toDouble())
-                                                .toBigDecimal()
-                                                .setScale(2, RoundingMode.HALF_EVEN)}"
+        btnVoltarParaSegundaTela = view.findViewById(R.id.btnVoltarParaSegundaTela)
 
+        val txtValorDistancia: TextView = view.findViewById(R.id.txtResultado)
+        txtValorDistancia.text = "Você irá gastar um total de R$${(((param1 ?: 1).toFloat() * (param2 ?: 1).toFloat()) / (param3 ?: 1).toFloat())
+                                                .toBigDecimal()
+                                                .setScale(2, RoundingMode.HALF_EVEN)} em combustível!"
+
+        btnVoltarParaSegundaTela.setOnClickListener {
+            findNavController().popBackStack()
+        }
 
         return view
     }
