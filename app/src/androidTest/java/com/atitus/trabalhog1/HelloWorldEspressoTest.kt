@@ -13,15 +13,25 @@ import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import androidx.test.internal.runner.junit4.statement.UiThreadStatement.runOnUiThread
+import androidx.test.platform.app.InstrumentationRegistry
 import org.junit.Test
 import org.junit.runner.RunWith
 import com.google.common.truth.Truth.assertThat
+import org.junit.Assert
+import java.math.RoundingMode
 
 
 @RunWith(AndroidJUnit4::class)
 @LargeTest
 class HelloWorldEspressoTest {
 
+    @Test
+    fun useAppContext() {
+        // Context of the app under test.
+        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
+        Assert.assertEquals("com.atitus.trabalhog1", appContext.packageName)
+    }
+    
     @Test
     fun verificaAlertaQuandoNomeFazio() {
         // Lança a MainActivity

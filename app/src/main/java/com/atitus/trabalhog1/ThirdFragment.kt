@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
+import java.math.BigDecimal
 import java.math.RoundingMode
 
 // TODO: Rename parameter arguments, choose names that match
@@ -46,15 +47,17 @@ class ThirdFragment : Fragment() {
         btnVoltarParaSegundaTela = view.findViewById(R.id.btnVoltarParaSegundaTela)
 
         val txtValorDistancia: TextView = view.findViewById(R.id.txtResultado)
-        txtValorDistancia.text = "Você irá gastar um total de R$${(((param1 ?: 1).toFloat() * (param2 ?: 1).toFloat()) / (param3 ?: 1).toFloat())
-                                                .toBigDecimal()
-                                                .setScale(2, RoundingMode.HALF_EVEN)} em combustível!"
+        txtValorDistancia.text = "Você irá gastar um total de R$${calculo(param1, param2, param3)} em combustível!"
 
         btnVoltarParaSegundaTela.setOnClickListener {
             findNavController().popBackStack()
         }
 
         return view
+    }
+
+    fun calculo(valor1: Float?, valor2: Float?, valor3: Float?): BigDecimal? {
+        return (((valor1 ?: 1).toFloat() * (valor2 ?: 1).toFloat()) / (valor3 ?: 1).toFloat()).toBigDecimal().setScale(2, RoundingMode.HALF_EVEN)
     }
 
     companion object {
