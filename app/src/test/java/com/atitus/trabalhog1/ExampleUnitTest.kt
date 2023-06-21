@@ -21,10 +21,10 @@ class ExampleUnitTest {
     }
 
     @Test
-    fun validarFuncaoCalculo() {
-        val fragment = ThirdFragment()
-        val result = fragment.calculo(10f, 20f, 30f)
-        assertEquals(0, result?.compareTo(BigDecimal("6.67")))
+    fun testCalculo() {
+        val fragmento = ThirdFragment()
+        val resultado = fragmento.calculo(10f, 20f, 30f)
+        assertEquals(BigDecimal("6.67"), resultado)
     }
 
     @Test
@@ -51,4 +51,6 @@ class ExampleUnitTest {
         val resultadoEsperado = 10
         assertEquals(resultadoEsperado, soma)
     }
+
+
 }

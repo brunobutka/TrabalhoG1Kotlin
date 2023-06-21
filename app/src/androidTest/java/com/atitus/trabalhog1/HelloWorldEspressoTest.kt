@@ -31,7 +31,7 @@ class HelloWorldEspressoTest {
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
         Assert.assertEquals("com.atitus.trabalhog1", appContext.packageName)
     }
-    
+
     @Test
     fun verificaAlertaQuandoNomeFazio() {
         // Lança a MainActivity
@@ -56,6 +56,6 @@ class HelloWorldEspressoTest {
         onView(withId(R.id.btnAvancarTelaInicial)).perform(click())
 
         // Verifica se o nome inserido no primeiro campo é exibido corretamente na segunda tela
-        onView(withId(R.id.txtUserName)).check(matches(withText("Olá $nomeInformado")))
+        onView(withId(R.id.txtUserName)).check(matches(withText("Ola $nomeInformado")))
     }
 }
